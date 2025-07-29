@@ -1,0 +1,1145 @@
+From e5f1494cfb54f3caaa4e830e25b54e5be4db3e73 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?=D0=A1=D1=83=D1=85=D0=B0=D1=80=D0=B8=D0=BA?=
+ <65870+suhr@users.noreply.github.com>
+Date: Wed, 30 Jul 2025 00:37:31 +0000
+Subject: Patch for Haiku
+
+
+diff --git a/doc/examples/test_single.sh b/doc/examples/test_single.sh
+index 31388a1..4272d4f 100755
+--- a/doc/examples/test_single.sh
++++ b/doc/examples/test_single.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../../tests/common.sh
+ 
+ exec_check_raw lean -Dlinter.all=false "$f"
+diff --git a/script/diff_changelogs.py b/script/diff_changelogs.py
+index 2019294..4c84c93 100755
+--- a/script/diff_changelogs.py
++++ b/script/diff_changelogs.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ import collections
+ import re
+diff --git a/script/gen_constants_cpp.py b/script/gen_constants_cpp.py
+index a6b2c62..5446464 100755
+--- a/script/gen_constants_cpp.py
++++ b/script/gen_constants_cpp.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/bin/python
+ # -*- coding: utf-8 -*-
+ #
+ # Copyright (c) 2015 Microsoft Corporation. All rights reserved.
+diff --git a/script/gen_tokens_cpp.py b/script/gen_tokens_cpp.py
+index 16e4117..16ca601 100755
+--- a/script/gen_tokens_cpp.py
++++ b/script/gen_tokens_cpp.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/bin/python
+ # -*- coding: utf-8 -*-
+ #
+ # Copyright (c) 2015 Microsoft Corporation. All rights reserved.
+diff --git a/script/lib/rebase-editor.sh b/script/lib/rebase-editor.sh
+index 875e1d8..03a0f13 100755
+--- a/script/lib/rebase-editor.sh
++++ b/script/lib/rebase-editor.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ 
+ # Script internal to `./script/rebase-stage0.sh`
+diff --git a/script/lib/update-stage0 b/script/lib/update-stage0
+index bb2daa3..53ecf0e 100755
+--- a/script/lib/update-stage0
++++ b/script/lib/update-stage0
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -euo pipefail
+ 
+ rm -r stage0 || true
+diff --git a/script/merge_remote.py b/script/merge_remote.py
+index f85a344..6708425 100755
+--- a/script/merge_remote.py
++++ b/script/merge_remote.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ """
+ Merge a tag into a branch on a GitHub repository.
+diff --git a/script/prepare-llvm-linux.sh b/script/prepare-llvm-linux.sh
+index 463f2ed..a7c2790 100755
+--- a/script/prepare-llvm-linux.sh
++++ b/script/prepare-llvm-linux.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -euxo pipefail
+ 
+ # run from root build directory (from inside nix-shell or otherwise defining GLIBC/ZLIB/GMP) as in
+diff --git a/script/prepare-llvm-macos.sh b/script/prepare-llvm-macos.sh
+index 715ba4e..f4b5c21 100755
+--- a/script/prepare-llvm-macos.sh
++++ b/script/prepare-llvm-macos.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -uxo pipefail
+ 
+ # run from root build directory as in
+diff --git a/script/prepare-llvm-mingw.sh b/script/prepare-llvm-mingw.sh
+index 4098c7a..f31bb89 100644
+--- a/script/prepare-llvm-mingw.sh
++++ b/script/prepare-llvm-mingw.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -euo pipefail
+ 
+ # run from root build directory in clang64 shell (NOT mingw64) as in
+diff --git a/script/push_repo_release_tag.py b/script/push_repo_release_tag.py
+index 454ae3b..ee4ffb1 100755
+--- a/script/push_repo_release_tag.py
++++ b/script/push_repo_release_tag.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ import sys
+ import subprocess
+ import requests
+diff --git a/script/rebase-stage0.sh b/script/rebase-stage0.sh
+index 899a395..ef07b25 100755
+--- a/script/rebase-stage0.sh
++++ b/script/rebase-stage0.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ # This script rebases onto the given branch/commit, and updates
+ # all `chore: update stage0` commits along the way.
+diff --git a/script/release_checklist.py b/script/release_checklist.py
+index 9c59245..7b149a3 100755
+--- a/script/release_checklist.py
++++ b/script/release_checklist.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ import argparse
+ import yaml
+diff --git a/script/release_notes.py b/script/release_notes.py
+index 7711315..6354d0c 100755
+--- a/script/release_notes.py
++++ b/script/release_notes.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ import sys
+ import re
+diff --git a/script/release_steps.py b/script/release_steps.py
+index 4409bdd..6400650 100755
+--- a/script/release_steps.py
++++ b/script/release_steps.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ """
+ Generate release steps script for Lean4 repositories.
+diff --git a/src/bin/lean.in b/src/bin/lean.in
+index 044b4ce..1e91391 100755
+--- a/src/bin/lean.in
++++ b/src/bin/lean.in
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ # ONLY FOR WEB ASSEMBLY BUILD
+ node --stack-size=8192 ${CMAKE_BINARY_DIR}/bin/lean.js $@
+ 
+diff --git a/src/bin/leanc.in b/src/bin/leanc.in
+index 3307553..38b491c 100755
+--- a/src/bin/leanc.in
++++ b/src/bin/leanc.in
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ # used only for building Lean itself
+ root=$(dirname $0)
+ ldflags=(@LEANC_INTERNAL_LINKER_FLAGS@ "-L$root/lib/lean" @LEAN_EXTRA_LINKER_FLAGS@)
+diff --git a/src/bin/leanmake b/src/bin/leanmake
+index 7a04a26..e326d44 100755
+--- a/src/bin/leanmake
++++ b/src/bin/leanmake
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ # A simple wrapper around `make` and the `lean.mk` makefile
+ # When called from a directory containing a `Makefile` file, calls `make` with
+ # the directory containing `lean.mk` in its path so that you can use
+diff --git a/src/cmake/run_checker.sh b/src/cmake/run_checker.sh
+index 98c5bbf..17f2422 100644
+--- a/src/cmake/run_checker.sh
++++ b/src/cmake/run_checker.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ emulator=$1
+ lean_bin=$2
+ leanchecker_bin=$3
+diff --git a/src/lake/build.sh b/src/lake/build.sh
+index 62f065a..b76a973 100755
+--- a/src/lake/build.sh
++++ b/src/lake/build.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env sh
++#!/bin/sh
+ 
+ if [ "$OS" = "Windows_NT" ]; then
+   LINK_OPTS=
+diff --git a/src/lake/examples/deps/test.sh b/src/lake/examples/deps/test.sh
+index 5265ef4..fe77064 100755
+--- a/src/lake/examples/deps/test.sh
++++ b/src/lake/examples/deps/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -exo pipefail
+ 
+ LAKE=${LAKE:-../../.lake/build/bin/lake}
+diff --git a/src/lake/examples/ffi/test.sh b/src/lake/examples/ffi/test.sh
+index c241202..8ef50df 100755
+--- a/src/lake/examples/ffi/test.sh
++++ b/src/lake/examples/ffi/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -euxo pipefail
+ 
+ LAKE=${LAKE:-../../.lake/build/bin/lake}
+diff --git a/src/lake/examples/hello/test.sh b/src/lake/examples/hello/test.sh
+index 30bf7a6..70f812f 100755
+--- a/src/lake/examples/hello/test.sh
++++ b/src/lake/examples/hello/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -euxo pipefail
+ 
+ LAKE=${LAKE:-../../.lake/build/bin/lake}
+diff --git a/src/lake/examples/scripts/test.sh b/src/lake/examples/scripts/test.sh
+index bb08f82..2286516 100755
+--- a/src/lake/examples/scripts/test.sh
++++ b/src/lake/examples/scripts/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -exo pipefail
+ 
+ # make prefix `/` behave on MSYS2
+diff --git a/src/lake/examples/targets/test.sh b/src/lake/examples/targets/test.sh
+index e8b6ba6..0bf29b6 100755
+--- a/src/lake/examples/targets/test.sh
++++ b/src/lake/examples/targets/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -exo pipefail
+ 
+ # Prevent MSYS2 from automatically transforming path-like targets
+diff --git a/src/lake/tests/8448/test.sh b/src/lake/tests/8448/test.sh
+index e0d2ce8..0866107 100755
+--- a/src/lake/tests/8448/test.sh
++++ b/src/lake/tests/8448/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/api/test.sh b/src/lake/tests/api/test.sh
+index e56d7cc..0a77983 100755
+--- a/src/lake/tests/api/test.sh
++++ b/src/lake/tests/api/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ # Run Lean tests
+diff --git a/src/lake/tests/badImport/test.sh b/src/lake/tests/badImport/test.sh
+index 54ca71f..da3b401 100755
+--- a/src/lake/tests/badImport/test.sh
++++ b/src/lake/tests/badImport/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/buildArgs/test.sh b/src/lake/tests/buildArgs/test.sh
+index 548753b..aeb5d32 100755
+--- a/src/lake/tests/buildArgs/test.sh
++++ b/src/lake/tests/buildArgs/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/clone/test.sh b/src/lake/tests/clone/test.sh
+index cf4a144..ea0238a 100755
+--- a/src/lake/tests/clone/test.sh
++++ b/src/lake/tests/clone/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/depTree/test.sh b/src/lake/tests/depTree/test.sh
+index 9a1faf6..abbd4d0 100755
+--- a/src/lake/tests/depTree/test.sh
++++ b/src/lake/tests/depTree/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ set -x
+ 
+diff --git a/src/lake/tests/driver/test.sh b/src/lake/tests/driver/test.sh
+index 2cb0fc1..05becfd 100755
+--- a/src/lake/tests/driver/test.sh
++++ b/src/lake/tests/driver/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/env/test.sh b/src/lake/tests/env/test.sh
+index 9c17649..3d00634 100755
+--- a/src/lake/tests/env/test.sh
++++ b/src/lake/tests/env/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/externLib/test.sh b/src/lake/tests/externLib/test.sh
+index 8915268..5af41ca 100755
+--- a/src/lake/tests/externLib/test.sh
++++ b/src/lake/tests/externLib/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/globs/test.sh b/src/lake/tests/globs/test.sh
+index eea4b8c..9f09e66 100755
+--- a/src/lake/tests/globs/test.sh
++++ b/src/lake/tests/globs/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/init/test.sh b/src/lake/tests/init/test.sh
+index d8bb595..77caa1f 100755
+--- a/src/lake/tests/init/test.sh
++++ b/src/lake/tests/init/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/inputFile/setup.sh b/src/lake/tests/inputFile/setup.sh
+index 3cd26d2..2b1e3fb 100755
+--- a/src/lake/tests/inputFile/setup.sh
++++ b/src/lake/tests/inputFile/setup.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -euxo pipefail
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/inputFile/test.sh b/src/lake/tests/inputFile/test.sh
+index 40faa3a..b1e17e6 100755
+--- a/src/lake/tests/inputFile/test.sh
++++ b/src/lake/tests/inputFile/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ # Setup directory structure
+diff --git a/src/lake/tests/kinds/test.sh b/src/lake/tests/kinds/test.sh
+index 4e0f274..bba216e 100755
+--- a/src/lake/tests/kinds/test.sh
++++ b/src/lake/tests/kinds/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ ./clean.sh
+ 
+diff --git a/src/lake/tests/lean/test.sh b/src/lake/tests/lean/test.sh
+index d9dd890..84372ae 100755
+--- a/src/lake/tests/lean/test.sh
++++ b/src/lake/tests/lean/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/llvm-bitcode-gen/test.sh b/src/lake/tests/llvm-bitcode-gen/test.sh
+index e5e3285..bb0ab67 100755
+--- a/src/lake/tests/llvm-bitcode-gen/test.sh
++++ b/src/lake/tests/llvm-bitcode-gen/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/lock/test.sh b/src/lake/tests/lock/test.sh
+index b2d5874..5c8379c 100755
+--- a/src/lake/tests/lock/test.sh
++++ b/src/lake/tests/lock/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -euxo pipefail
+ 
+ echo "lock file currently disabled; skipping test"
+diff --git a/src/lake/tests/logLevel/test.sh b/src/lake/tests/logLevel/test.sh
+index 9e8e20d..1b5d1d5 100755
+--- a/src/lake/tests/logLevel/test.sh
++++ b/src/lake/tests/logLevel/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/manifest/test.sh b/src/lake/tests/manifest/test.sh
+index cc987c9..609c1c2 100755
+--- a/src/lake/tests/manifest/test.sh
++++ b/src/lake/tests/manifest/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/meta/test.sh b/src/lake/tests/meta/test.sh
+index 8a96f36..672705b 100755
+--- a/src/lake/tests/meta/test.sh
++++ b/src/lake/tests/meta/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/noBuild/test.sh b/src/lake/tests/noBuild/test.sh
+index b607807..4024c5b 100755
+--- a/src/lake/tests/noBuild/test.sh
++++ b/src/lake/tests/noBuild/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ # Tests that Lake properly exits before normal builds occur
+diff --git a/src/lake/tests/noRelease/test.sh b/src/lake/tests/noRelease/test.sh
+index 62ce32e..b764ad2 100755
+--- a/src/lake/tests/noRelease/test.sh
++++ b/src/lake/tests/noRelease/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/old/test.sh b/src/lake/tests/old/test.sh
+index b1aa6d8..50a17b9 100755
+--- a/src/lake/tests/old/test.sh
++++ b/src/lake/tests/old/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -exo pipefail
+ 
+ LAKE=${LAKE:-../../.lake/build/bin/lake}
+diff --git a/src/lake/tests/online/test.sh b/src/lake/tests/online/test.sh
+index 3d495cf..c8e940d 100755
+--- a/src/lake/tests/online/test.sh
++++ b/src/lake/tests/online/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ export ELAN_TOOLCHAIN=test
+diff --git a/src/lake/tests/order/test.sh b/src/lake/tests/order/test.sh
+index e985562..03ae172 100755
+--- a/src/lake/tests/order/test.sh
++++ b/src/lake/tests/order/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/packageOverrides/test.sh b/src/lake/tests/packageOverrides/test.sh
+index 6d336de..36abeea 100755
+--- a/src/lake/tests/packageOverrides/test.sh
++++ b/src/lake/tests/packageOverrides/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/postUpdate/test.sh b/src/lake/tests/postUpdate/test.sh
+index eb426eb..bcde02c 100755
+--- a/src/lake/tests/postUpdate/test.sh
++++ b/src/lake/tests/postUpdate/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/precompileLink/test.sh b/src/lake/tests/precompileLink/test.sh
+index 540cad5..3adaab2 100755
+--- a/src/lake/tests/precompileLink/test.sh
++++ b/src/lake/tests/precompileLink/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/query/test.sh b/src/lake/tests/query/test.sh
+index 85085dd..7dfb919 100755
+--- a/src/lake/tests/query/test.sh
++++ b/src/lake/tests/query/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/rebuild/test.sh b/src/lake/tests/rebuild/test.sh
+index b9ec2bd..e134467 100755
+--- a/src/lake/tests/rebuild/test.sh
++++ b/src/lake/tests/rebuild/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/reservoirConfig/test.sh b/src/lake/tests/reservoirConfig/test.sh
+index 31c4af6..ed63c8f 100755
+--- a/src/lake/tests/reservoirConfig/test.sh
++++ b/src/lake/tests/reservoirConfig/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/reversion/test.sh b/src/lake/tests/reversion/test.sh
+index b4eafd0..2910ad2 100755
+--- a/src/lake/tests/reversion/test.sh
++++ b/src/lake/tests/reversion/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/serve/test.sh b/src/lake/tests/serve/test.sh
+index 03df518..dc7ff58 100755
+--- a/src/lake/tests/serve/test.sh
++++ b/src/lake/tests/serve/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source  ../common.sh
+ 
+ INIT_REQ=$'Content-Length: 46\r\n\r\n{"jsonrpc":"2.0","method":"initialize","id":1}'
+diff --git a/src/lake/tests/setupFile/test.sh b/src/lake/tests/setupFile/test.sh
+index 5d8123e..2a941a8 100755
+--- a/src/lake/tests/setupFile/test.sh
++++ b/src/lake/tests/setupFile/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/toml/fetch-tests.sh b/src/lake/tests/toml/fetch-tests.sh
+index 4bc6841..8d6c186 100755
+--- a/src/lake/tests/toml/fetch-tests.sh
++++ b/src/lake/tests/toml/fetch-tests.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -euo pipefail
+ 
+ git clone https://github.com/toml-lang/toml-test toml-test --depth 1 --branch v1.4.0
+diff --git a/src/lake/tests/toml/test.sh b/src/lake/tests/toml/test.sh
+index 35ecca1..bbd7d50 100755
+--- a/src/lake/tests/toml/test.sh
++++ b/src/lake/tests/toml/test.sh
+@@ -1,3 +1,3 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ test_run env lean --run Test.lean
+diff --git a/src/lake/tests/toolchain/test.sh b/src/lake/tests/toolchain/test.sh
+index 4225309..2357104 100755
+--- a/src/lake/tests/toolchain/test.sh
++++ b/src/lake/tests/toolchain/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ # Tests which require Elan to download a toolchain
+diff --git a/src/lake/tests/trace/test.sh b/src/lake/tests/trace/test.sh
+index 2e3d458..41cc4b1 100755
+--- a/src/lake/tests/trace/test.sh
++++ b/src/lake/tests/trace/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/translateConfig/test.sh b/src/lake/tests/translateConfig/test.sh
+index 668d884..396a1a1 100755
+--- a/src/lake/tests/translateConfig/test.sh
++++ b/src/lake/tests/translateConfig/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ ./clean.sh
+diff --git a/src/lake/tests/updateToolchain/test.sh b/src/lake/tests/updateToolchain/test.sh
+index aa688ea..c2a5ec6 100755
+--- a/src/lake/tests/updateToolchain/test.sh
++++ b/src/lake/tests/updateToolchain/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ # Ensure Lake thinks there is a elan environment configured
+diff --git a/src/lake/tests/versionTags/test.sh b/src/lake/tests/versionTags/test.sh
+index 9e29463..f74e79d 100755
+--- a/src/lake/tests/versionTags/test.sh
++++ b/src/lake/tests/versionTags/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ source ./clean.sh
+ 
+diff --git a/src/lean.mk.in b/src/lean.mk.in
+index 4c979f1..9e50720 100644
+--- a/src/lean.mk.in
++++ b/src/lean.mk.in
+@@ -44,7 +44,7 @@ NAT_OBJS = $(patsubst %.lean,$(TEMP_OUT)/%.o,$(shell find $(PKG) $(PKG).lean -na
+ ALL_NAT_OBJS = $(patsubst %.lean,$(TEMP_OUT)/%.o,$(SRCS))
+ endif
+ 
+-SHELL = /usr/bin/env bash -euo pipefail
++SHELL = /bin/bash -euo pipefail
+ 
+ .PHONY: all bin lib depends clean
+ # Disable all default make rules
+diff --git a/src/stdlib.make.in b/src/stdlib.make.in
+index c015fdf..b92303c 100644
+--- a/src/stdlib.make.in
++++ b/src/stdlib.make.in
+@@ -1,7 +1,7 @@
+ # LEAN_BASH: Makes the Bash shell used by the Lean build configurable.
+ # On Windows, when CMake/Make is spawned directly (e.g., VSCode's CMake Tools),
+ # it lacks a proper shell environment, so we need to manually point it to Bash.
+-LEAN_BASH ?= /usr/bin/env bash
++LEAN_BASH ?= /bin/bash
+ SHELL := $(LEAN_BASH) -eo pipefail
+ 
+ # any absolute path to the stdlib breaks the Makefile
+diff --git a/stage0/src/runtime/io.cpp b/stage0/src/runtime/io.cpp
+index a8a05a80dcdf2e6cd62bfc2af7be7afda6a00952..46fa9ddb3e50f94be98bcbdfe7a7435d521fc605 100644
+GIT binary patch
+delta 14
+Wcmcb!fqCf$<_%Fyn<p}zz6t;{at7J}
+
+delta 68
+zcmZ3wf%(n`<_%FyrkQDZDXD1+KCX^_@vgqX&Ox35A+CO0%9(k|Ii)G73O2=+#rj2w
+Yc`5n1dKq?H%BguNnQ5CNn9g1W06&r#U;qFB
+
+diff --git a/stage0/src/runtime/process.cpp b/stage0/src/runtime/process.cpp
+index ed8d63d41c9095729321d5776eed7d2caa5ebd1b..9cad5f7135eea784b36a13f4acf22a4fc60ef801 100644
+GIT binary patch
+delta 84
+zcmcb)igEpF#tk`4(rGEFX$tZ29*&;gq4Dut%9(k|Ii)G73O4@1o8y>x4O9?v3P4bj
+enWA8;kd~R35?_*0l$w~L;TP)TvpLD=yAlASdK<6+
+
+delta 19
+bcmZ3#n(^i;#tk`4o2N4U*WY~5=$#S(Tt*2j
+
+diff --git a/stage0/src/runtime/stack_overflow.cpp b/stage0/src/runtime/stack_overflow.cpp
+index 73cb51c426d11aadd0961380887cbade8feef893..de380ea0ab575c999e50b303eac2bca20757f8b2 100644
+GIT binary patch
+delta 194
+zcmaDPw@qOK2a~#TW?D*WnnHZMhoh%=XnZ`Ea%Ns~PH9T2f{lN$UWOf)a%x^mX4+<U
+zrd2F~naBzifS@F!C^a!9J~J;ZUjal|bAd$DQ%mBJWHiz;^HQJ!8h)WZKAJiTY9Q5`
+w){~9dRE<DPz2cI@<m~vQ#Nt#<YmgcG`U-wdRtgAV1sf;_=$_4M*|u^30F+BUw*UYD
+
+delta 17
+Zcmdm{@JMb02h(N)rj;z4TiG{q0027n1{(kX
+
+diff --git a/stage0/src/stdlib.make.in b/stage0/src/stdlib.make.in
+index c015fdf97b4471207be74bd1e1a06115b01cef38..b92303c375ed33b6bafa1502e0879aeea289bb27 100644
+GIT binary patch
+delta 16
+XcmccRdC7CaSC*vAJpIj#j5n15LdXW;
+
+delta 23
+fcmccQdCPOcSDw=1BK@SyJpI(XGKGylZz=--gi{L8
+
+diff --git a/tests/bench/accumulate_profile.py b/tests/bench/accumulate_profile.py
+index a018f83..2a2418e 100755
+--- a/tests/bench/accumulate_profile.py
++++ b/tests/bench/accumulate_profile.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ import collections
+ import re
+diff --git a/tests/bench/compile.sh b/tests/bench/compile.sh
+index c62ecea..a5648ac 100755
+--- a/tests/bench/compile.sh
++++ b/tests/bench/compile.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ compile_lean_c_backend
+diff --git a/tests/bench/ghc-gc.py b/tests/bench/ghc-gc.py
+index 0fb7b22..5c5c99e 100755
+--- a/tests/bench/ghc-gc.py
++++ b/tests/bench/ghc-gc.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ import ast
+ import sys
+diff --git a/tests/bench/lean-gc.py b/tests/bench/lean-gc.py
+index 85fb5da..53864a6 100755
+--- a/tests/bench/lean-gc.py
++++ b/tests/bench/lean-gc.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ import re
+ import sys
+diff --git a/tests/bench/mlkit-gc.py b/tests/bench/mlkit-gc.py
+index 0a61b32..1dc76f8 100755
+--- a/tests/bench/mlkit-gc.py
++++ b/tests/bench/mlkit-gc.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ import re
+ import sys
+diff --git a/tests/bench/ocaml-gc.py b/tests/bench/ocaml-gc.py
+index ff574c7..4331696 100755
+--- a/tests/bench/ocaml-gc.py
++++ b/tests/bench/ocaml-gc.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ import sys
+ import json
+diff --git a/tests/bench/perf.py b/tests/bench/perf.py
+index ce43d56..5ce55c8 100755
+--- a/tests/bench/perf.py
++++ b/tests/bench/perf.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ import sys
+ 
+diff --git a/tests/bench/report.py b/tests/bench/report.py
+index 17ac17b..8e1fffd 100755
+--- a/tests/bench/report.py
++++ b/tests/bench/report.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python3
++#!/bin/python3
+ 
+ import collections
+ import os
+diff --git a/tests/bench/run.sh b/tests/bench/run.sh
+index cdc955f..b5fe5d1 100755
+--- a/tests/bench/run.sh
++++ b/tests/bench/run.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ if [ $# -eq 0 ]; then
+     echo "Usage: run.sh [file] [args]*"
+     exit 1
+diff --git a/tests/bench/test_single.sh b/tests/bench/test_single.sh
+index c28b083..4f65bf4 100755
+--- a/tests/bench/test_single.sh
++++ b/tests/bench/test_single.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ # First check the C version actually works...
+diff --git a/tests/compiler/test_single.sh b/tests/compiler/test_single.sh
+index 6267b39..024d11b 100755
+--- a/tests/compiler/test_single.sh
++++ b/tests/compiler/test_single.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ # First check the C version actually works...
+diff --git a/tests/compiler/test_single_interpret.sh b/tests/compiler/test_single_interpret.sh
+index a4e60cd..478a2ee 100755
+--- a/tests/compiler/test_single_interpret.sh
++++ b/tests/compiler/test_single_interpret.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ exec_check lean -Dlinter.all=false --run "$f"
+diff --git a/tests/ir/lirc b/tests/ir/lirc
+index 4fedfbb..8f84fd7 100755
+--- a/tests/ir/lirc
++++ b/tests/ir/lirc
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ unamestr=`uname`
+ if [ "$unamestr" = Darwin ] || [ "$unamestr" = FreeBSD ]; then
+diff --git a/tests/lean/copy-produced b/tests/lean/copy-produced
+index 6730b3e..ed6ffae 100755
+--- a/tests/lean/copy-produced
++++ b/tests/lean/copy-produced
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ #
+ # Updates all *.expected.out files it finds within tests/lean
+diff --git a/tests/lean/interactive/test_single.sh b/tests/lean/interactive/test_single.sh
+index b0dc015..f41b8a4 100755
+--- a/tests/lean/interactive/test_single.sh
++++ b/tests/lean/interactive/test_single.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../../common.sh
+ 
+ # IO.Process.exit (used by the file worker) seems to be incompatible with LSAN
+diff --git a/tests/lean/run/test_single.sh b/tests/lean/run/test_single.sh
+index 489377f..cb48b66 100755
+--- a/tests/lean/run/test_single.sh
++++ b/tests/lean/run/test_single.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../../common.sh
+ 
+ exec_check_raw lean -Dlinter.all=false -Dexperimental.module=true "$f"
+diff --git a/tests/lean/server/test_single.sh b/tests/lean/server/test_single.sh
+index 5a26d89..26f07b3 100755
+--- a/tests/lean/server/test_single.sh
++++ b/tests/lean/server/test_single.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../../common.sh
+ 
+ exec_check_raw lean -Dlinter.all=false --run "$f"
+diff --git a/tests/lean/test_single.sh b/tests/lean/test_single.sh
+index 943e038..54dd8b3 100755
+--- a/tests/lean/test_single.sh
++++ b/tests/lean/test_single.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ # these tests don't have to succeed
+diff --git a/tests/lean/trust0/test_single.sh b/tests/lean/trust0/test_single.sh
+index da34985..c1583c6 100755
+--- a/tests/lean/trust0/test_single.sh
++++ b/tests/lean/trust0/test_single.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../../common.sh
+ 
+ exec_check_raw lean -t0 -Dlinter.all=false "$f"
+diff --git a/tests/pkg/builtin_attr/test.sh b/tests/pkg/builtin_attr/test.sh
+index b1c0671..8d2dc52 100755
+--- a/tests/pkg/builtin_attr/test.sh
++++ b/tests/pkg/builtin_attr/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ lake build
+diff --git a/tests/pkg/debug/test.sh b/tests/pkg/debug/test.sh
+index 596668c..837d672 100755
+--- a/tests/pkg/debug/test.sh
++++ b/tests/pkg/debug/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ # should succeed
+diff --git a/tests/pkg/deriving/test.sh b/tests/pkg/deriving/test.sh
+index b1c0671..8d2dc52 100755
+--- a/tests/pkg/deriving/test.sh
++++ b/tests/pkg/deriving/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ lake build
+diff --git a/tests/pkg/frontend/test.sh b/tests/pkg/frontend/test.sh
+index a149dc1..c6b9355 100755
+--- a/tests/pkg/frontend/test.sh
++++ b/tests/pkg/frontend/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ lake build
+diff --git a/tests/pkg/initialize/test.sh b/tests/pkg/initialize/test.sh
+index b1c0671..8d2dc52 100755
+--- a/tests/pkg/initialize/test.sh
++++ b/tests/pkg/initialize/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ lake build
+diff --git a/tests/pkg/linter_set/test.sh b/tests/pkg/linter_set/test.sh
+index b1c0671..8d2dc52 100755
+--- a/tests/pkg/linter_set/test.sh
++++ b/tests/pkg/linter_set/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ lake build
+diff --git a/tests/pkg/misc/test.sh b/tests/pkg/misc/test.sh
+index b1c0671..8d2dc52 100755
+--- a/tests/pkg/misc/test.sh
++++ b/tests/pkg/misc/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ lake build
+diff --git a/tests/pkg/module/test.sh b/tests/pkg/module/test.sh
+index 3037056..c4f6a5e 100755
+--- a/tests/pkg/module/test.sh
++++ b/tests/pkg/module/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ LEAN_ABORT_ON_PANIC=1 lake build
+diff --git a/tests/pkg/path with spaces/test.sh b/tests/pkg/path with spaces/test.sh
+index 9141526..bb85cac 100755
+--- a/tests/pkg/path with spaces/test.sh	
++++ b/tests/pkg/path with spaces/test.sh	
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ lake exe "path with spaces"
+diff --git a/tests/pkg/prv/test.sh b/tests/pkg/prv/test.sh
+index b1c0671..8d2dc52 100755
+--- a/tests/pkg/prv/test.sh
++++ b/tests/pkg/prv/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ lake build
+diff --git a/tests/pkg/setup/test.sh b/tests/pkg/setup/test.sh
+index ff76796..24d9fbd 100755
+--- a/tests/pkg/setup/test.sh
++++ b/tests/pkg/setup/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -euo pipefail
+ 
+ # Test that Lean will use the specified olean from `setup.json`
+diff --git a/tests/pkg/test_extern/test.sh b/tests/pkg/test_extern/test.sh
+index a8019e5..4bf85c0 100755
+--- a/tests/pkg/test_extern/test.sh
++++ b/tests/pkg/test_extern/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ exit 0  # TODO: flaky test disabled
+ 
+diff --git a/tests/pkg/user_attr/test.sh b/tests/pkg/user_attr/test.sh
+index b1c0671..8d2dc52 100755
+--- a/tests/pkg/user_attr/test.sh
++++ b/tests/pkg/user_attr/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ lake build
+diff --git a/tests/pkg/user_attr_app/test.sh b/tests/pkg/user_attr_app/test.sh
+index f87d6fd..4c2b980 100755
+--- a/tests/pkg/user_attr_app/test.sh
++++ b/tests/pkg/user_attr_app/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ lake exe user_attr
+diff --git a/tests/pkg/user_ext/test.sh b/tests/pkg/user_ext/test.sh
+index e2de370..06b6226 100755
+--- a/tests/pkg/user_ext/test.sh
++++ b/tests/pkg/user_ext/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ exit 0  # TODO: test started being nondeterministic
+ 
+diff --git a/tests/pkg/user_opt/test.sh b/tests/pkg/user_opt/test.sh
+index b1c0671..8d2dc52 100755
+--- a/tests/pkg/user_opt/test.sh
++++ b/tests/pkg/user_opt/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ 
+ rm -rf .lake/build
+ lake build
+diff --git a/tests/pkg/user_plugin/test.sh b/tests/pkg/user_plugin/test.sh
+index 37ca83c..852ac4f 100755
+--- a/tests/pkg/user_plugin/test.sh
++++ b/tests/pkg/user_plugin/test.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ set -euo pipefail
+ 
+ # Deermine shared library extension
+diff --git a/tests/playground/compile.sh b/tests/playground/compile.sh
+index eae0ae2..7faccb4 100755
+--- a/tests/playground/compile.sh
++++ b/tests/playground/compile.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ if [ $# -eq 0 ]; then
+     echo "Usage: compile.sh [file]"
+     exit 1
+diff --git a/tests/playground/oldcompile.sh b/tests/playground/oldcompile.sh
+index 0f24311..49f8afe 100755
+--- a/tests/playground/oldcompile.sh
++++ b/tests/playground/oldcompile.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ if [ $# -eq 0 ]; then
+     echo "Usage: compile.sh [file]"
+     exit 1
+diff --git a/tests/playground/oldrun.sh b/tests/playground/oldrun.sh
+index a89047c..a39f911 100755
+--- a/tests/playground/oldrun.sh
++++ b/tests/playground/oldrun.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ if [ $# -eq 0 ]; then
+     echo "Usage: run.sh [file] [args]*"
+     exit 1
+diff --git a/tests/playground/run.sh b/tests/playground/run.sh
+index cdc955f..b5fe5d1 100755
+--- a/tests/playground/run.sh
++++ b/tests/playground/run.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ if [ $# -eq 0 ]; then
+     echo "Usage: run.sh [file] [args]*"
+     exit 1
+diff --git a/tests/plugin/test_single.sh b/tests/plugin/test_single.sh
+index 702438f..536f1c2 100755
+--- a/tests/plugin/test_single.sh
++++ b/tests/plugin/test_single.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/bash
+ source ../common.sh
+ 
+ # LEAN_EXPORTING needs to be defined for .c files included in shared libraries
+-- 
+2.48.1
+

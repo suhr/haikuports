@@ -1,0 +1,58 @@
+SUMMARY="A theorem prover and programming language"
+DESCRIPTION="Lean is an interactive theorem prover based on dependent type theory, \
+designed for use both in cutting-edge mathematics and in software verification."
+HOMEPAGE="https://lean-lang.org/"
+COPYRIGHT="2013-2025 Lean FRO"
+LICENSE="Apache v2"
+REVISION="1"
+SOURCE_URI="https://github.com/leanprover/lean4/archive/refs/tags/v$portVersion.tar.gz"
+CHECKSUM_SHA256="fb4a1b696fad43336267e9b2f70f3cfb97e4c7f9985af0eee655732312ed7d48"
+SOURCE_DIR="lean4-$portVersion"
+PATCHES="lean-4.21.0.patchset"
+
+ARCHITECTURES="?all !x86_gcc2"
+SECONDARY_ARCHITECTURES="?x86"
+
+PROVIDES="
+	lean$secondaryArchSuffix = $portVersion
+	"
+REQUIRES="
+	haiku$secondaryArchSuffix
+	lib:libuv$secondaryArchSuffix
+	lib:libgmp$secondaryArchSuffix
+	cadical$secondaryArchSuffix
+	"
+
+BUILD_REQUIRES="
+	haiku${secondaryArchSuffix}_devel
+	devel:libuv$secondaryArchSuffix
+	devel:libgmp$secondaryArchSuffix
+	cadical$secondaryArchSuffix
+	"
+BUILD_PREREQUIRES="
+	cmd:cmake
+	cmd:gcc$secondaryArchSuffix
+	cmd:make
+	cmd:cadical
+	cmd:mobical
+	cmd:pkg_config$secondaryArchSuffix
+	"
+
+BUILD()
+{
+	cmake -Bbuild -S. -DCMAKE_BUILD_TYPE=Release \
+		-DUSE_GITHASH=OFF \
+		-DUSE_MIMALLOC=OFF \
+		-DCMAKE_INSTALL_PREFIX=$prefix \
+		-DSWIPL_INSTALL_IN_LIB=$libDir \
+		-DSWIPL_INSTALL_IN_SHARE=$dataDir \
+		-DSWIPL_INSTALL_MANPAGES=$manDir/man1 \
+		-DSWIPL_INSTALL_PKGCONFIG=$libDir/pkgconfig
+
+	make -C build $jobArgs
+}
+
+INSTALL()
+{
+	make -C build install
+}

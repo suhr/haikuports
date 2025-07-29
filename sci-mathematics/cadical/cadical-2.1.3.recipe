@@ -1,0 +1,54 @@
+SUMMARY="A simplified satisfiability solver"
+DESCRIPTION="CaDiCaL is a modern SAT solver with many features written in C++. It can \
+be used as stand-alone application through the command-line interface (CLI) or as library \
+through its application programming interface (API) in C++ (or in limited form in C)."
+HOMEPAGE="https://github.com/arminbiere/cadical"
+COPYRIGHT="2016-2021 Armin Biere, Johannes Kepler University Linz, Austria
+	2020-2021 Mathias Fleury, Johannes Kepler University Linz, Austria
+	2020-2021 Nils Froleyks, Johannes Kepler University Linz, Austria
+	2022-2024 Katalin Fazekas, Vienna University of Technology, Austria
+	2021-2024 Armin Biere, University of Freiburg, Germany
+	2021-2024 Mathias Fleury, University of Freiburg, Germany
+	2023-2024 Florian Pollitt, University of Freiburg, Germany
+	2024-2024 Tobias Faller, University of Freiburg, Germany"
+LICENSE="MIT"
+REVISION="1"
+SOURCE_URI="https://github.com/arminbiere/cadical/archive/refs/tags/rel-$portVersion.tar.gz"
+CHECKSUM_SHA256="abfe890aa4ccda7b8449c7ad41acb113cfb8e7e8fbf5e49369075f9b00d70465"
+SOURCE_DIR="cadical-rel-$portVersion"
+
+ARCHITECTURES="?all !x86_gcc2"
+SECONDARY_ARCHITECTURES="?x86"
+
+PROVIDES="
+	cadical$secondaryArchSuffix = $portVersion
+	cmd:cadical$secondaryArchSuffix
+	cmd:mobical$secondaryArchSuffix
+	devel:cadical$secondaryArchSuffix = $portVersion
+	"
+REQUIRES="
+	haiku$secondaryArchSuffix
+	"
+
+BUILD_REQUIRES="
+	haiku${secondaryArchSuffix}_devel
+	"
+BUILD_PREREQUIRES="
+	cmd:gcc$secondaryArchSuffix
+	cmd:make
+	"
+
+BUILD()
+{
+	./configure CXXFLAGS="-lnetwork"
+	make
+}
+
+INSTALL()
+{
+	install -Dm0755 build/cadical "$binDir/cadical"
+	install -Dm0755 build/mobical "$binDir/mobical"
+	install -Dm0644 src/ccadical.h "$includeDir/ccadical.h"
+	install -Dm0644 src/cadical.hpp "$includeDir/cadical.hpp"
+	install -Dm0644 build/libcadical.a "$developLibDir/libcadical.a"
+}
