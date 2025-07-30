@@ -40,6 +40,8 @@ BUILD_PREREQUIRES="
 
 BUILD()
 {
+	mkdir -p /usr
+	ln -Tfs /bin /usr/bin
 	cmake -Bbuild -S. -DCMAKE_BUILD_TYPE=Release \
 		-DUSE_GITHASH=OFF \
 		-DUSE_MIMALLOC=OFF \
